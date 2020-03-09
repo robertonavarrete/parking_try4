@@ -5,11 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Brand</th>
-      <th>Car model</th>
-      <th>Year</th>
-      <th>Plate</th>
-      <th>User</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Año</th>
+      <th>Patente</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,7 +20,6 @@
         <td><%= car.car_model %></td>
         <td><%= car.year %></td>
         <td><%= car.plate %></td>
-        <td><%= car.user %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
         <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,10 +1,12 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /cars
   # GET /cars.json
+
   def index
-    @cars = Car.all
+    @cars = Car.where(:user_id => current_user.id)
   end
 
   # GET /cars/1
@@ -25,6 +27,7 @@ class CarsController < ApplicationController
   # POST /cars.json
   def create
     @car = Car.new(car_params)
+    @car.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @car.save

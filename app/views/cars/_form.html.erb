@@ -31,11 +31,6 @@
     <%= form.text_field :plate %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.select :user_id, options_for_select(User.all.map{|s|[s.name,s.id]}) %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
