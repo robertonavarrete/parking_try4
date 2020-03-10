@@ -1,0 +1,27 @@
+<%= form_with(model: lot, local: true) do |form| %>
+  <% if lot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lot.errors.count, "error") %> prohibited this lot from being saved:</h2>
+
+      <ul>
+      <% lot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lot_column %>
+    <%= form.text_field :lot_column %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lot_row %>
+    <%= form.number_field :lot_row %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
