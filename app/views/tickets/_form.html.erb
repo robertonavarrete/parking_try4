@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :car_id %>
-    <%= form.text_field :car_id %>
+    <%= form.select :car_id, options_for_select(current_user.cars.map{|s|[s.plate,s.id]}) %>
   </div>
 
   <div class="field">
