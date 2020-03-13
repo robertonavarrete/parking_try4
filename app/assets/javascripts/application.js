@@ -16,4 +16,7 @@
 //= require jquery/dist/jquery
 //= require popper.js/dist/umd/popper
 //= require bootstrap/dist/js/bootstrap
+//= require bootstrap-datetime-picker/js/bootstrap-datetimepicker
+//= require moment/moment
+//= require moment/locale/es
 //= require_tree .
