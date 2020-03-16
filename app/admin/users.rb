@@ -25,12 +25,14 @@ ActiveAdmin.register User do
     end
   end
 
+  filter :identification_type, as: :select, collection: [['Pasaporte', 'true'], ['RUT', 'false']]
   filter :identification_number
   filter :email
   filter :current_sign_in_at
   filter :sign_in_count
-  filter :created_at
-
+  filter :cars, as: :select, collection: Car.pluck(:brand, :id)
+  filter :parking_start, as: :date_range, collection: Ticket.pluck(:date_parking_start, :id)
+  filter :parking_end, as: :date_range, collection: Ticket.pluck(:date_parking_end, :id)
 
 
   index do
@@ -41,8 +43,6 @@ ActiveAdmin.register User do
     column :identification_number
     column :email
     column :created_at
-    column :last_sign_in_at
-    column :marca
     actions
   end
 
