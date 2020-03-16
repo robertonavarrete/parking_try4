@@ -12,6 +12,7 @@ gem 'sprockets'
 gem 'react-rails'
 gem 'webpacker'
 gem 'rails-erd'
+gem 'activeadmin'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
