@@ -296,6 +296,7 @@ DEPENDENCIES
   rails (~> 5.2.4, >= 5.2.4.1)
   rails-erd
   react-rails
+  ruby-graphviz
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
