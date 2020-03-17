@@ -1,5 +1,6 @@
 <h1>New Ticket</h1>
 
 <%= render 'form', ticket: @ticket %>
+<%= link_to 'Confirmar compra', pre_pay_billings_path, class: 'btn btn-success float-right' %>
 
 <%= link_to 'Back', tickets_path %>

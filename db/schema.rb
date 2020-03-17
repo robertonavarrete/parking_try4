@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_220611) do
+ActiveRecord::Schema.define(version: 2020_03_17_054713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,16 +70,6 @@ ActiveRecord::Schema.define(version: 2020_03_16_220611) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.boolean "payed", default: false
-    t.integer "price"
-    t.integer "quantity"
-    t.bigint "billing_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["billing_id"], name: "index_orders_on_billing_id"
-  end
-
   create_table "tickets", force: :cascade do |t|
     t.bigint "car_id"
     t.date "date_parking_start"
@@ -88,6 +78,8 @@ ActiveRecord::Schema.define(version: 2020_03_16_220611) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "payed", default: false
+    t.bigint "billing_id"
+    t.index ["billing_id"], name: "index_tickets_on_billing_id"
     t.index ["car_id"], name: "index_tickets_on_car_id"
   end
 
@@ -109,6 +101,6 @@ ActiveRecord::Schema.define(version: 2020_03_16_220611) do
 
   add_foreign_key "billings", "users"
   add_foreign_key "cars", "users"
-  add_foreign_key "orders", "billings"
+  add_foreign_key "tickets", "billings"
   add_foreign_key "tickets", "cars"
 end

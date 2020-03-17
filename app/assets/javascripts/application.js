@@ -13,8 +13,6 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require react
-//= require react_ujs
 //= require components
 //= require jquery/dist/jquery
 //= require popper.js/dist/umd/popper
@@ -22,6 +20,8 @@
 //= require bootstrap-datetime-picker/js/bootstrap-datetimepicker
 //= require moment/moment
 //= require moment/locale/es
+//= require react
+//= require react_ujs
 //= require react-seat-picker/dist/index
 //= require react-tooltip/dist/index
 //= require react-dom/index
