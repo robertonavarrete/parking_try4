@@ -5,7 +5,7 @@ import App from "../components/seat_picker_c";
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const data = document.body.appendChild(document.createElement('div'))  
+  const data = document.getElementById("root")  
   ReactDOM.render(<App />,data)
   })
 

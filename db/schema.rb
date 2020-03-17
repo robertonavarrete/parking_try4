@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_054713) do
+ActiveRecord::Schema.define(version: 2020_03_17_072714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,10 +64,10 @@ ActiveRecord::Schema.define(version: 2020_03_17_054713) do
   end
 
   create_table "lots", force: :cascade do |t|
-    t.string "lot_column"
-    t.integer "lot_row"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "lot_column"
+    t.string "lot_row"
   end
 
   create_table "tickets", force: :cascade do |t|
