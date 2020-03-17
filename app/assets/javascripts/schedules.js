@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
     $('#estimate').on('click',function(){
-        var init_date = $('#init_date_picker').data("datetimepicker").getDate()
-        var end_date = $('#end_date_picker').data("datetimepicker").getDate()
+        var init_date = $('#init_date_picker').data("DateTimePicker").getDate()
+        var end_date = $('#end_date_picker').data("DateTimePicker").getDate()
         var difference = end_date.getTime() - init_date.getTime()
         var days = Math.round(difference/ (1000*60*60*24))
         if (days >= 0){
@@ -13,10 +13,8 @@ $(document).ready(function(){
         else {console.log('La fecha de salida debe ser igual o posterior a la de ingreso')
         }
     })
-    
-    
-
-        $('#init_date_picker').datetimepicker({
+  
+    $('#init_date_picker').datetimepicker({
         minView: 2,
         format: 'dd-MM-yyyy',
         autoclose: true,
@@ -24,18 +22,17 @@ $(document).ready(function(){
         weekStart: 1,
         icons: {
             time: 'fa fa-clock-o',
-          date: 'fa fa-calendar',
-          up: 'fa fa-chevron-up',
-          down: 'fa fa-chevron-down',
-          previous: 'fa fa-chevron-left',
-          next: 'fa fa-chevron-right',
-          today: 'glyphicon glyphicon-screenshot',
-          clear: 'fa fa-trash',
-          close: 'fa fa-times'
+            date: 'fa fa-calendar',
+            up: 'fa fa-chevron-up',
+            down: 'fa fa-chevron-down',
+            previous: 'fa fa-chevron-left',
+            next: 'fa fa-chevron-right',
+            today: 'glyphicon glyphicon-screenshot',
+            clear: 'fa fa-trash',
+            close: 'fa fa-times'
         }
     })
 
-    
     $('#end_date_picker').datetimepicker({
         minView: 2,
         format: 'dd-MM-yyyy',
@@ -47,12 +44,9 @@ $(document).ready(function(){
             date: 'far fa-calendar-alt',
             up: 'fa fa-arrow-up',
             down: 'fa fa-arrow-down'
-        }
+            }
     });
-
-
-
-    })
+})
     
     
     
