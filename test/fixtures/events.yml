@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lot: one
+  date_parking_start: 2020-03-18
+  date_parking_end: 2020-03-18
+  car: one
+
+two:
+  lot: two
+  date_parking_start: 2020-03-18
+  date_parking_end: 2020-03-18
+  car: two

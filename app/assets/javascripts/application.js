@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require jquery/dist/jquery
 //= require moment/min/moment-with-locales
+//= require fullcalendar/dist/fullcalendar
 //= require popper.js/dist/umd/popper
 //= require bootstrap/dist/js/bootstrap
 //= require bootstrap4-datetimepicker/build/js/bootstrap-datetimepicker.min

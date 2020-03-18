@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   
   resources :tickets
-  resources :lots
-  get 'schedules/index'
+  resources :lots do
+    resources :events
+  end
   resources :cars
+  get 'schedules/index'
 
   get 'billings/pre_pay', to:'billings#pre_pay', as: 'pre_pay_billings'
   get 'billings/execute', to:'billings#execute', as:'execute_billings'

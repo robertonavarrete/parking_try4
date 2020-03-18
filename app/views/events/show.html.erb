@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lot:</strong>
+  <%= @event.lot %>
+</p>
+
+<p>
+  <strong>Date parking start:</strong>
+  <%= @event.date_parking_start %>
+</p>
+
+<p>
+  <strong>Date parking end:</strong>
+  <%= @event.date_parking_end %>
+</p>
+
+<p>
+  <strong>Car:</strong>
+  <%= @event.car %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
