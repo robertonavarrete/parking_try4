@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_072714) do
+ActiveRecord::Schema.define(version: 2020_03_18_195645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,15 @@ ActiveRecord::Schema.define(version: 2020_03_17_072714) do
     t.string "lot_row"
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "lot_id"
+    t.date "date_parking_start"
+    t.date "date_parking_end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lot_id"], name: "index_schedules_on_lot_id"
+  end
+
   create_table "tickets", force: :cascade do |t|
     t.bigint "car_id"
     t.date "date_parking_start"
@@ -101,6 +110,7 @@ ActiveRecord::Schema.define(version: 2020_03_17_072714) do
 
   add_foreign_key "billings", "users"
   add_foreign_key "cars", "users"
+  add_foreign_key "schedules", "lots"
   add_foreign_key "tickets", "billings"
   add_foreign_key "tickets", "cars"
 end
