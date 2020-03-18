@@ -83,6 +83,11 @@ react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.0.tgz#0f37c3613c34fe6b37cd7f763a0d6293ab15c527"
   integrity sha512-GFMtL0vHkiBv9HluwNZTggSn/sCyEt9n02aM0dSAjGGyqyNlAyftYm4phPxdvCigG15JreC5biwxCgTAJZ7yAA==
 
+seatchartjs@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/seatchartjs/-/seatchartjs-1.8.0.tgz#c28c204def0b05f786ba35c02ee14a0fa32f10c0"
+  integrity sha512-r8Eb1hkwHNzdGvRPUv8v6M71VPbX4522NMh8IB0WSLXeN9wMD5mB0qvmUdwQbgHjgxVY8giwXJWS03rsMoiVBA==
+
 tether@^1.4.0:
   version "1.4.7"
   resolved "https://registry.yarnpkg.com/tether/-/tether-1.4.7.tgz#d56a818590d8fe72e387f77a67f93ab96d8e1fb2"

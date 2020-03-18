@@ -14,9 +14,9 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery/dist/jquery
-//= require moment/moment
+//= require moment/min/moment-with-locales
 //= require popper.js/dist/umd/popper
 //= require bootstrap/dist/js/bootstrap
-//= require moment/locale/es
-//= require bootstrap-datetime-picker/js/bootstrap-datetimepicker.min
+//= require bootstrap4-datetimepicker/build/js/bootstrap-datetimepicker.min
+//= require seatchartjs/src/js/seatchart
 //= require_tree .
