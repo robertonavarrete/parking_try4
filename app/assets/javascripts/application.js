@@ -18,5 +18,4 @@
 //= require popper.js/dist/umd/popper
 //= require bootstrap/dist/js/bootstrap
 //= require bootstrap4-datetimepicker/build/js/bootstrap-datetimepicker.min
-//= require seatchartjs/src/js/seatchart
 //= require_tree .
