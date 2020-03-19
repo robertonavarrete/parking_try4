@@ -1,6 +1,3 @@
-//= require jquery/dist/jquery
-//= require bootstrap-datetime-picker/js/bootstrap-datetimepicker
-
 $(document).ready(function(){
 
     $('#estimate').on('click',function(){
@@ -21,7 +18,7 @@ $(document).ready(function(){
         minView: 2,
         format: 'dd-MM-yyyy',
         autoclose: true,
-        locale: 'es-do',
+        language: 'es',
         weekStart: 1,
         startDate: f,
         icons: {
@@ -54,13 +51,13 @@ $(document).ready(function(){
     });
 
     
-        $("#init_date_picker").on("dp.change", function (e) {
-            $('#end_date_picker').data("DateTimePicker").startDate(e.date);
-        });
-        // $("#end_date_picker").on("dp.update", function (e) {
-        //     $('#init_date_picker').data("datetimepicker").endDate(e.date);
-        // });
+    $("#init_date_picker").on("changeDate", function (e) {
+        $('#end_date_picker').datetimepicker('setStartDate',$("#init_date_picker").val());
+    });
 
-})
-    
+    $("#end_date_picker").on("changeDate", function (e) {
+        $('#init_date_picker').datetimepicker('setEndDate',$("#end_date_picker").val());
+    });
+        
+    })
     
