@@ -1,13 +1,18 @@
 $(document).on('ready turbolinks:load', function(){
+    var pathArray = window.location.pathname.split('/');
+    var id_page = pathArray[2];
     var token = $( 'meta[name="csrf-token"]' ).attr( 'content' );
         $.ajaxSetup( {
             beforeSend: function ( xhr ) {
                 xhr.setRequestHeader( 'X-CSRF-Token', token );
                 }
         });
-
+    var url_ev_1 ="/lots/"
+    var url_ev_2 ="/events"
+    var url_ev_3 =".json"
+    var url_ev_3_b ="/new"
     $('#calendar').fullCalendar({
-        events: '/lots/4/events.json',
+        events: url_ev_1 + id_page + url_ev_2 + url_ev_3,
         eventLimit: true,
         firstDay: 1,
         views: {
@@ -27,7 +32,7 @@ $(document).on('ready turbolinks:load', function(){
               text: 'Reservar Fecha',
               click: function() {
                 $.ajax({
-                  url: '/lots/4/events/new',
+                  url: '/lots/'+ id_page + '/events/new',
                   type: 'GET',
                   dataType: 'script'
                 })
