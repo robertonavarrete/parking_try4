@@ -1,7 +1,7 @@
-<%= form_with(model: event, local: true) do |form| %>
+<%= form_with model: [:lot, @event] do |form| %>
   <% if event.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+      <h2><%= pluralize(lot_event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
       <ul>
       <% event.errors.full_messages.each do |message| %>
@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= form.label :lot_id %>
     <%= form.text_field :lot_id %>
-  </div>
+  </div> -->
 
   <div class="field">
     <%= form.label :date_parking_start %>
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :car_id %>
-    <%= form.text_field :car_id %>
+    <%= form.select :car_id, options_for_select(current_user.cars.map{|s|[s.plate,s.id]}) %>
   </div>
 
   <div class="actions">

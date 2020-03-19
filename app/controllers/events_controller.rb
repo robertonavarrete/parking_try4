@@ -43,6 +43,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
+        byebug
         format.html { redirect_to lot_event_path(@lot), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -69,7 +70,7 @@ class EventsController < ApplicationController
       @lot = Lot.find(params[:lot_id])
     end
     
-    def set_post
+    def set_event
       @event = @lot.events.find(params[:id])  
     end
 

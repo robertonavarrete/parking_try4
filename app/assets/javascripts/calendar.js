@@ -15,25 +15,25 @@ $(document).on('ready turbolinks:load', function(){
                     eventLimit: 1
                 }
             },
+        eventRender: function(event, element) {
+                element.css("font-size", "1.2em");
+                element.css("padding", "1.5em");
+            },
         header: {
             center: 'addEventButton'
             },
-        eventRender: function(event, element) {
-            element.css("font-size", "1.2em");
-            element.css("padding", "1.5em");
-        },
-        //   customButtons: {
-        //     addEventButton: {
-        //       text: 'Agregar evento...',
-        //       click: function() {
-        //         $.ajax({
-        //           url: '/events/new',
-        //           type: 'GET',
-        //           dataType: 'script'
-        //         })
-        //       }
-        //     }
-        //   },
+          customButtons: {
+            addEventButton: {
+              text: 'Agregar evento...',
+              click: function() {
+                $.ajax({
+                  url: '/lots/4/events/new',
+                  type: 'GET',
+                  dataType: 'script'
+                })
+              }
+            }
+          },
         eventDrop: function(event, delta, revertFunc) {
             if (event.start.format() < moment().format()){
                 alert('no no no')
