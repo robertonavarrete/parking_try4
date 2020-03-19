@@ -7,10 +7,21 @@ $(document).on('ready turbolinks:load', function(){
         });
 
     $('#calendar').fullCalendar({
-        events: '/events.json',
+        events: '/lots/4/events.json',
+        eventLimit: true,
+        firstDay: 1,
+        views: {
+                dayGrid: {
+                    eventLimit: 1
+                }
+            },
         header: {
             center: 'addEventButton'
-          },
+            },
+        eventRender: function(event, element) {
+            element.css("font-size", "1.2em");
+            element.css("padding", "1.5em");
+        },
         //   customButtons: {
         //     addEventButton: {
         //       text: 'Agregar evento...',
@@ -23,7 +34,6 @@ $(document).on('ready turbolinks:load', function(){
         //       }
         //     }
         //   },
-        firstDay: 1,
         eventDrop: function(event, delta, revertFunc) {
             if (event.start.format() < moment().format()){
                 alert('no no no')
@@ -31,10 +41,15 @@ $(document).on('ready turbolinks:load', function(){
             }
             else {
                 $.ajax({
-                    url: '/events/'+ event.id,
+                    url: '/lots/:lot_id/events/'+ event.id,
                     type: 'patch',
                     dataType: 'script',
-                    data: {event: {start: event.start.format() }}
+                    data: {
+                        event: {
+                            start: event.date_parking_start.format() ,
+                            end: event.date_parking_end.format() 
+                        }
+                    }
                 })
             }
         },
@@ -42,7 +57,7 @@ $(document).on('ready turbolinks:load', function(){
         eventClick: function(event, jsEvent, view) {
                 jsEvent.preventDefault()
                 $.ajax({
-                    url: '/events/'+ event.id +'/edit',
+                    url: '/lots/:lot_id/events/'+ event.id +'/edit',
                     type: 'GET',
                     dataType: 'script'
                 })
@@ -53,3 +68,8 @@ $(document).on('ready turbolinks:load', function(){
     })
 
 })
+
+
+
+
+
