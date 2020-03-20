@@ -1,6 +1,7 @@
 class Ticket < ApplicationRecord
   belongs_to :car
   belongs_to :billing, optional: true
+  has_one :event, through: :car
  
   scope :cart, (-> {where(payed: false)})
 

@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
   belongs_to :lot
-  belongs_to :car
+  belongs_to :ticket
 end

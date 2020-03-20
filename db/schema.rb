@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_221411) do
+ActiveRecord::Schema.define(version: 2020_03_20_043621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,10 +74,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_221411) do
     t.bigint "lot_id"
     t.date "date_parking_start"
     t.date "date_parking_end"
-    t.bigint "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["car_id"], name: "index_events_on_car_id"
     t.index ["lot_id"], name: "index_events_on_lot_id"
   end
 
@@ -97,8 +95,10 @@ ActiveRecord::Schema.define(version: 2020_03_19_221411) do
     t.datetime "updated_at", null: false
     t.boolean "payed", default: false
     t.bigint "billing_id"
+    t.bigint "event_id"
     t.index ["billing_id"], name: "index_tickets_on_billing_id"
     t.index ["car_id"], name: "index_tickets_on_car_id"
+    t.index ["event_id"], name: "index_tickets_on_event_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -119,8 +119,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_221411) do
 
   add_foreign_key "billings", "users"
   add_foreign_key "cars", "users"
-  add_foreign_key "events", "cars"
   add_foreign_key "events", "lots"
   add_foreign_key "tickets", "billings"
   add_foreign_key "tickets", "cars"
+  add_foreign_key "tickets", "events"
 end
