@@ -16,25 +16,10 @@
     <%= form.select :car_id, options_for_select(current_user.cars.map{|s|[s.plate,s.id]}),{class: 'selectpicker'}%>
   </div>
 
-  <div class="row my-4">
-    <div class="form-group col-md-3">
-      <%= form.text_field :date_parking_start , id: 'init_date_picker',placeholder:"Fecha de Inicio" %>
-    </div>
-    <div class="form-group col-md-3">
-      <%= form.text_field :date_parking_end , id: 'end_date_picker',placeholder:"Fecha de Salida"%>
-    </div>
-  </div>
+  <%= form.fields_for :events do |events_form| %>
+    <%= render 'events/events_fields', events_form: events_form %>
+  <%end %>
 
-  <%# <div class="field">
-    <%= form.label :date_parking_start %>
-    <%# <%= form.text_field :date_parking_start , id: 'init_date_picker' %> 
-    <%# :placeholder => @date_init %>
-  <%# </div> %>
-
-  <%# <div class="field">
-    <%= form.label :date_parking_end %>
-    <%# <%= form.text_field :date_parking_end , id: 'end_date_picker'%>
-  <%# </div> %> 
 
   <div class="form-group">
     <%= form.label :total %>

@@ -16,8 +16,7 @@ class TicketsController < ApplicationController
   # GET /tickets/new
   def new
     @ticket = Ticket.new
-    
-    @date_init = params[:booking]
+    @ticket.events.build
   
   end
 
@@ -73,6 +72,6 @@ class TicketsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ticket_params
-      params.require(:ticket).permit(:car_id, :date_parking_start, :date_parking_end, :total)
+      params.require(:ticket).permit(:car_id, :total, events_attributes:[:lot_id, :date_parking_start, :date_parking_end])
     end
 end

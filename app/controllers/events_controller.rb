@@ -75,7 +75,7 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:lot_id, :date_parking_start, :date_parking_end, :car_id)
+      params.require(:event).permit(:lot_id, :date_parking_start, :date_parking_end, :ticket_id)
     end
 
 end

@@ -1,7 +1,8 @@
 class Ticket < ApplicationRecord
   belongs_to :car
   belongs_to :billing, optional: true
-  has_one :event, through: :car
+  has_many :events
+  accepts_nested_attributes_for :events, allow_destroy: true
  
   scope :cart, (-> {where(payed: false)})
 
