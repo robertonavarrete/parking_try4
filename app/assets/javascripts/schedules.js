@@ -16,6 +16,7 @@ $(document).ready(function(){
     var f = new Date();
     $('#init_date_picker').datetimepicker({
         minView: 2,
+        fontAwesome: true,
         format: 'dd-MM-yyyy',
         autoclose: true,
         language: 'es',
