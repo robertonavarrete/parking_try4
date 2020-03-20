@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_195645) do
+ActiveRecord::Schema.define(version: 2020_03_19_221411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,13 @@ ActiveRecord::Schema.define(version: 2020_03_18_195645) do
     t.index ["user_id"], name: "index_billings_on_user_id"
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.date "date_parking_start"
+    t.date "date_parking_end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cars", force: :cascade do |t|
     t.string "brand"
     t.string "car_model"
@@ -63,20 +70,22 @@ ActiveRecord::Schema.define(version: 2020_03_18_195645) do
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    t.bigint "lot_id"
+    t.date "date_parking_start"
+    t.date "date_parking_end"
+    t.bigint "car_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_events_on_car_id"
+    t.index ["lot_id"], name: "index_events_on_lot_id"
+  end
+
   create_table "lots", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "lot_column"
     t.string "lot_row"
-  end
-
-  create_table "schedules", force: :cascade do |t|
-    t.bigint "lot_id"
-    t.date "date_parking_start"
-    t.date "date_parking_end"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["lot_id"], name: "index_schedules_on_lot_id"
   end
 
   create_table "tickets", force: :cascade do |t|
@@ -110,7 +119,8 @@ ActiveRecord::Schema.define(version: 2020_03_18_195645) do
 
   add_foreign_key "billings", "users"
   add_foreign_key "cars", "users"
-  add_foreign_key "schedules", "lots"
+  add_foreign_key "events", "cars"
+  add_foreign_key "events", "lots"
   add_foreign_key "tickets", "billings"
   add_foreign_key "tickets", "cars"
 end

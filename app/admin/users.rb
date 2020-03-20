@@ -30,7 +30,7 @@ ActiveAdmin.register User do
   filter :email
   filter :current_sign_in_at
   filter :sign_in_count
-  filter :cars, as: :select, collection: Car.pluck(:brand, :id)
+  # filter :cars, as: :select, collection: Car.pluck(:brand, :id)
   # filter :parking_start, as: :date_range, collection: Ticket.pluck(:date_parking_start, :id)
   # filter :parking_end, as: :date_range, collection: Ticket.pluck(:date_parking_end, :id)
 

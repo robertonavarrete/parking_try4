@@ -16,6 +16,9 @@ class TicketsController < ApplicationController
   # GET /tickets/new
   def new
     @ticket = Ticket.new
+    
+    @date_init = params[:booking]
+  
   end
 
   # GET /tickets/1/edit

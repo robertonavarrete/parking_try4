@@ -19,4 +19,5 @@
 //= require popper.js/dist/umd/popper
 //= require bootstrap/dist/js/bootstrap
 //= require bootstrap-datetime-picker/js/bootstrap-datetimepicker
+//= require bootstrap-select/js/bootstrap-select
 //= require_tree .
