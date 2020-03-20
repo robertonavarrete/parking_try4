@@ -17,6 +17,7 @@ class TicketsController < ApplicationController
   def new
     @ticket = Ticket.new
     @ticket.events.build
+    @price = 5900
   
   end
 

@@ -19,4 +19,7 @@ class Ticket < ApplicationRecord
     end
   end
 
+  def price
+    5900
+  end
 end
