@@ -1,7 +1,5 @@
 $(document).on('ready turbolinks:load', function(){
 
-    
-
     $('#ticket_events_attributes_0_lot_id').change(function(){
         $('#calendar').fullCalendar('refetchEvents')
     })
