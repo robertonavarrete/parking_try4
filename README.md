@@ -1,24 +1,23 @@
-# README
+# Proyecto Parking
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README describes the design of the project Parking.
+An APP which you can book a parking lot for your car near to the airport, when you need to trip for few days.
 
-Things you may want to cover:
+For use the app:\n
+* Sign up in the platform\n
+* Register your car\n
+* Select the day when your parking starts\n
+* Select the day when you parking ends\n
+* Select your parking lot\n
+* Receive the QR Ticket after paying\n
 
-* Ruby version
+[Proyecto en heroku](https://guarded-retreat-42723.herokuapp.com/)
 
-* System dependencies
+[El Tablero en Trello](https://trello.com/b/v6xqn1mP/parking-aeropuerto)
 
-* Configuration
 
-* Database creation
+![alt text](/modelo_logico_parking.png "Logo Modelo Lógico")
 
-* Database initialization
+![alt text](/home_design.png "El bosquejo de mi home")
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
