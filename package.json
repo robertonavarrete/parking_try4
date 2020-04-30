@@ -7,7 +7,7 @@
     "bootstrap-select": "^1.13.12",
     "bootstrap4-datetimepicker": "^5.2.3",
     "fullcalendar": "^3.10.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "popper.js": "^1.16.1",
     "prop-types": "^15.7.2"
